@@ -3,7 +3,10 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky install",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "next": "latest",
@@ -28,6 +31,27 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "typescript": "^4.5.5"
+    "husky": "^7.0.4",
+    "typescript": "^4.5.5",
+    "lint-staged": "^12.3.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint:fix"
+    ],
+    "*.jsx": [
+      "yarn lint:fix"
+    ],
+    "*.ts": [
+      "yarn lint:fix"
+    ],
+    "*.tsx": [
+      "yarn lint:fix"
+    ]
   }
 }
