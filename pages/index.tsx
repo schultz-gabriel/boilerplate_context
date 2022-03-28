@@ -7,6 +7,16 @@ const Title = styled.h1`
   font-size: 50px;
 `;
 
+const HtmlComponent = styled.div`
+  background-color: blue;
+`;
+
 export default function Home() {
-  return <Title>harleyjayy_xo</Title>;
+  return (
+    <HtmlComponent>
+      <Title>
+        Gabriel is building it
+      </Title>
+    </HtmlComponent>
+  );
 }
