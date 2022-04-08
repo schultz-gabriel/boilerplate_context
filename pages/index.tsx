@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import HomeScreen from '../src/screens/HomeScreen';
+
 const Title = styled.h1`
   color: ${({ theme }) => theme.color};
   background-color: ${({ theme }) => theme.backgroundColor};
@@ -11,12 +13,12 @@ const HtmlComponent = styled.div`
   background-color: blue;
 `;
 
-export default function Home() {
-  return (
+export default () => (
+  <HomeScreen>
     <HtmlComponent>
       <Title>
         Gabriel is building it
       </Title>
     </HtmlComponent>
-  );
-}
+  </HomeScreen>
+);

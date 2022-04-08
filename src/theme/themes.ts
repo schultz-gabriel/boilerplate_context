@@ -36,7 +36,7 @@ export const light = {
   menuBG: '#e9e9e9',
   draculaTheme,
   breakpoints,
-  typographyVariants
+  typographyVariants,
 };
 
 export const dark = {
@@ -53,5 +53,5 @@ export const dark = {
   menuBG: '#292929',
   draculaTheme,
   breakpoints,
-  typographyVariants
+  typographyVariants,
 };

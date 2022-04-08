@@ -3,15 +3,17 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import NextNprogress from 'nextjs-progressbar';
-import { light, dark } from '../src/theme';
-import GlobalStyle from '../src/theme/GlobalStyle';
 
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  const [theme, setTheme] = useState(dark);
+import { light, dark } from '../src/theme/themes';
+import GlobalStyle from '../src/theme/global';
+
+// eslint-disable-next-line react/function-component-definition
+const App = ({ Component, pageProps }: AppProps) => {
+  const [theme, setTheme] = useState(light);
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
   };
-  const title = '';
+  const title = 'Meeh';
   const url = '';
   const image = '';
   const description = '';
