@@ -55,3 +55,10 @@ export const dark = {
   breakpoints,
   typographyVariants,
 };
+
+export default {
+  typographyVariants,
+  breakpoints,
+  dark,
+  light,
+};
