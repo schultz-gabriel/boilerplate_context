@@ -1,6 +1,10 @@
 import typographyVariants from './typographyVariants';
 
-const breakpoints = {
+type breakpointTypes = {
+  [key: string]: number
+}
+
+export const breakpoints:breakpointTypes = {
   xs: 0,
   sm: 480,
   md: 768,
@@ -56,9 +60,9 @@ export const dark = {
   typographyVariants,
 };
 
-export default {
-  typographyVariants,
-  breakpoints,
-  dark,
-  light,
-};
+// export default {
+//   typographyVariants,
+//   breakpoints,
+//   dark,
+//   light,
+// };
