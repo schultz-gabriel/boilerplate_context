@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import HomeScreen from '../src/screens/HomeScreen';
+import websitePageHOC from '../src/wrappers/websitePage/hoc';
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.color};
@@ -10,10 +11,10 @@ const Title = styled.h1`
 `;
 
 const HtmlComponent = styled.div`
-  background-color: blue;
+  background-color: ${(theme) => theme.color};
 `;
 
-export default () => (
+const Home = () => (
   <HomeScreen>
     <HtmlComponent>
       <Title>
@@ -22,3 +23,12 @@ export default () => (
     </HtmlComponent>
   </HomeScreen>
 );
+
+export default websitePageHOC(Home, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Início',
+      prevImage: '',
+    },
+  },
+});
