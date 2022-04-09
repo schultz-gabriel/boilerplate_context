@@ -1,23 +1,14 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import WebsitePageWrapper from '..';
-// import WebsiteGlobalProvider from '../Provider';
 
-interface teste {
-  pageWrapperProps: {
-    seoProps: {
-      headTitle: string,
-      prevImage: string
-    },
-  },
-  toggleTheme: Function,
-}
+import { HocProps } from './types';
 
 export default function websitePageHOC(
   PageComponent:any,
   { pageWrapperProps } = { pageWrapperProps: {} },
 ) {
-  return (props:teste) => (
+  return (props:HocProps) => (
     <WebsitePageWrapper
       {...pageWrapperProps}
       {...props.pageWrapperProps}

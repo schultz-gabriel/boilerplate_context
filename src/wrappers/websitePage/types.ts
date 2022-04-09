@@ -1,12 +1,14 @@
 import { ReactNode } from 'react';
 
-interface hocProps {
-    children: ReactNode,
+export interface SeoPropsTypes {
     seoProps: {
         headTitle: string,
         prevImage: string,
     },
-    toggleTheme: Function
 }
 
-export default hocProps;
+export interface WebsitePageTypes extends SeoPropsTypes {
+    children: ReactNode,
+    toggleTheme: Function
+
+}
