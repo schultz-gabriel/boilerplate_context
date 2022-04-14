@@ -38,9 +38,11 @@ export const light = {
   paragraph: '#767676',
   cardBG: 'rgba(196, 196, 196, 0.2)',
   menuBG: '#e9e9e9',
+
   draculaTheme,
   breakpoints,
   typographyVariants,
+  transition: '200ms',
 };
 
 export const dark = {
@@ -55,14 +57,9 @@ export const dark = {
   paragraph: '#767676',
   cardBG: 'rgba(196, 196, 196, 0.2)',
   menuBG: '#292929',
+
   draculaTheme,
   breakpoints,
   typographyVariants,
+  transition: '200ms',
 };
-
-// export default {
-//   typographyVariants,
-//   breakpoints,
-//   dark,
-//   light,
-// };
