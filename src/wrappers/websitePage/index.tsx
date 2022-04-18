@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { HamburgerButton } from 'react-hamburger-button';
 import { WebsitePageTypes } from './types';
 
+import { DesktopWrapper, MobileWrapper } from './ScreenWrappers';
+import Text from '../../components/foundations/Text';
+import Button from '../../components/commons/Button';
+import Modal from '../../components/commons/Modal';
 import Header from '../../components/commons/Header';
 import Nav from '../../components/commons/Nav';
-import Modal from '../../components/commons/Modal';
-import { DesktopWrapper, MobileWrapper } from './ScreenWrappers';
+import Footer from '../../components/commons/Footer';
 import ThemeSwitcher from '../../components/commons/ThemeSwitcher';
+import { CloseIcon } from '../../../public/icons/closeIcon';
 
 import SEO from '../../SEO';
 
@@ -37,6 +41,20 @@ export default ({
                 }
               }
             >
+              <header
+                style={
+                {
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  width: '100%',
+                  padding: '20px 0 0 0',
+                }
+              }
+              >
+                <Button ghost onClick={() => { setModalState(false); }}>
+                  <CloseIcon color={theme.color} />
+                </Button>
+              </header>
               <Nav />
               <ThemeSwitcher onChange={() => toggleTheme()} />
             </div>
@@ -44,7 +62,7 @@ export default ({
         </MobileWrapper>
 
         <Header>
-          <h1>logo</h1>
+          <Text variant="title" tag="span">logo</Text>
           <DesktopWrapper>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Nav />
@@ -65,6 +83,7 @@ export default ({
         </Header>
 
         {children}
+        <Footer />
       </div>
     </>
   );

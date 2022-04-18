@@ -1,17 +1,17 @@
 import React from 'react';
 
-import Link from '../Link';
+import Button from '../Button';
 
 import { NavWrapper, LinkList, LinkItem } from './Nav.styled';
 
 const navItems = [
   {
     label: 'Início',
-    link: '/123',
+    link: '/',
   },
   {
-    label: '123',
-    link: '/123',
+    label: 'Blog',
+    link: '/',
   },
 ];
 
@@ -20,7 +20,7 @@ export default () => (
     <LinkList>
       {navItems.map((item) => (
         <LinkItem key={item.label}>
-          <Link href={item.link}>{item.label}</Link>
+          <Button ghost href={item.link}>{item.label}</Button>
         </LinkItem>
       ))}
     </LinkList>

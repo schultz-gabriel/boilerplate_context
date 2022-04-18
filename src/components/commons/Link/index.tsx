@@ -3,10 +3,14 @@ import React from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 
+import Text from '../../foundations/Text';
+
 import { ComponentTypes } from '../../types';
 
 interface LinkTypes extends ComponentTypes {
     href: string,
+    // eslint-disable-next-line react/require-default-props
+    tag?: string
 }
 
 const StyledLink = styled.a`
@@ -20,11 +24,16 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function Link({ href, children, ...props }:LinkTypes) {
+export default function Link({
+  href, children, tag, ...props
+}:LinkTypes) {
+  const textTag = tag || 'subTitle';
   return (
     <NextLink href={href} passHref>
       <StyledLink {...props}>
-        {children}
+        <Text variant={textTag} as="span">
+          {children}
+        </Text>
       </StyledLink>
     </NextLink>
   );

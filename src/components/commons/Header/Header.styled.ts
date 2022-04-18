@@ -6,9 +6,11 @@ width: 100%;
 display: flex;
 align-items: center;
 justify-content: space-between;
-padding: 0 30px;
+padding: 30px;
 ${breakpointMedia({
     md: css`
+    padding: 0 30px;
+
     `,
   })}
 `;
