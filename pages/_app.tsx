@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           options={{ showSpinner: false }}
         />
         <GlobalStyle />
-        <Component toggleTheme={toggleTheme} {...pageProps} />
+        <Component toggleTheme={toggleTheme} theme={theme} {...pageProps} />
       </ThemeProvider>
     </>
   );

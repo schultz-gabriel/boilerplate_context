@@ -13,6 +13,7 @@ export default function websitePageHOC(
       {...pageWrapperProps}
       {...props.pageWrapperProps}
       toggleTheme={props.toggleTheme}
+      theme={props.theme}
     >
       <PageComponent {...props} />
     </WebsitePageWrapper>

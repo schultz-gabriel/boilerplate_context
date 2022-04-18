@@ -9,6 +9,9 @@ export interface SeoPropsTypes {
 
 export interface WebsitePageTypes extends SeoPropsTypes {
     children: ReactNode,
-    toggleTheme: Function
-
+    toggleTheme: () => void
+    theme: {
+        color?: string
+        menuBG?: string
+    }
 }
