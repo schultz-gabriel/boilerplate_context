@@ -45,19 +45,18 @@ export const TextStyleVariantsMap:any = {
 
 const TextBase = styled.span<TextTypes>`
   ${(props) => TextStyleVariantsMap[props.variant]}
+  color: ${(props) => (props.color ? props.color : props.theme.color)}
 `;
 
-export default function Text({
-  tag, variant, children, ...props
-}:TextTypes) {
-  return (
-    <TextBase
-      as={tag}
-      variant={variant}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
-    >
-      {children}
-    </TextBase>
-  );
-}
+export default ({
+  tag, variant, children, color, ...props
+}:TextTypes) => (
+  <TextBase
+    as={tag}
+    variant={variant}
+    color={color}
+    {...props}
+  >
+    {children}
+  </TextBase>
+);
