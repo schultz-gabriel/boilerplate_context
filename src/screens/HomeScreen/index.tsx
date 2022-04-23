@@ -1,24 +1,29 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Text from '../../components/foundations/Text';
 
 import PageWrapper from '../../components/layout/PageWrapper';
 
 import breakpointMedia from '../../theme/utils/breakpointMedia';
 
 const HtmlComponent = styled.div`
-  background-color: ${(theme) => theme.color};
-  ${breakpointMedia({
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  /* ${breakpointMedia({
     md: css`
     `,
-  })}
+  })} */
 `;
 
 const Home = () => (
   <PageWrapper>
     <HtmlComponent>
-      <h1>
-        Gabriel is building it
-      </h1>
+      <Text variant="title" color="#fff">
+        Boiler Plate
+      </Text>
     </HtmlComponent>
   </PageWrapper>
 );

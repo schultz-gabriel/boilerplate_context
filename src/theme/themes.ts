@@ -12,6 +12,9 @@ export const breakpoints:breakpointTypes = {
   xl: 1200,
 };
 
+const borderRadius = '6px';
+const transition = '200ms';
+
 const draculaTheme = {
   Background: '#282a36',
   CurrentLine: '#44475a',
@@ -42,7 +45,8 @@ export const light = {
   draculaTheme,
   breakpoints,
   typographyVariants,
-  transition: '200ms',
+  borderRadius,
+  transition,
 };
 
 export const dark = {
@@ -61,5 +65,6 @@ export const dark = {
   draculaTheme,
   breakpoints,
   typographyVariants,
-  transition: '200ms',
+  transition,
+  borderRadius,
 };
