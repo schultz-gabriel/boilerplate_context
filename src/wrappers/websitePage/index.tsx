@@ -25,7 +25,11 @@ export default ({
   return (
     <>
       <SEO {...seoProps} />
-      {isPageLoading ? (<h1 style={{ backgroundColor: '#000', color: '#fff' }}>carreganu</h1>) : (
+      {isPageLoading ? (
+        <div style={{ backgroundColor: '#000', width: '100%', height: '100vh' }}>
+          <h1 style={{ color: '#fff' }}>carreganu</h1>
+        </div>
+      ) : (
 
         <div
           style={{ width: '100%', display: 'flex', flexDirection: 'column' }}
