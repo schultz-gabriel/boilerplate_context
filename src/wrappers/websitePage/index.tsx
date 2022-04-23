@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { WebsitePageTypes } from './types';
 
 import { DesktopWrapper, MobileWrapper } from './ScreenWrappers';
@@ -18,30 +18,20 @@ export default ({
   children, seoProps, toggleTheme, theme,
 }:WebsitePageTypes) => {
   const [isModalOpen, setModalState] = useState(false);
-  const [isPageLoading, setIsPageLoading] = useState(true);
-
-  useEffect(() => setIsPageLoading(false), []);
-
   return (
     <>
       <SEO {...seoProps} />
-      {isPageLoading ? (
-        <div style={{ backgroundColor: '#000', width: '100%', height: '100vh' }}>
-          <h1 style={{ color: '#fff' }}>carreganu</h1>
-        </div>
-      ) : (
-
-        <div
-          style={{ width: '100%', display: 'flex', flexDirection: 'column' }}
-        >
-          <MobileWrapper>
-            <Modal
-              isOpen={isModalOpen}
-              onClose={() => { setModalState(false); }}
-            >
-              <div
-                data-modal-safe-area
-                style={
+      <div
+        style={{ width: '100%', display: 'flex', flexDirection: 'column' }}
+      >
+        <MobileWrapper>
+          <Modal
+            isOpen={isModalOpen}
+            onClose={() => { setModalState(false); }}
+          >
+            <div
+              data-modal-safe-area
+              style={
                 {
                   display: 'flex',
                   flexDirection: 'column',
@@ -50,9 +40,9 @@ export default ({
                   opacity: 1,
                 }
               }
-              >
-                <header
-                  style={
+            >
+              <header
+                style={
                 {
                   display: 'flex',
                   justifyContent: 'flex-end',
@@ -60,37 +50,36 @@ export default ({
                   padding: '20px 0 0 0',
                 }
               }
-                >
-                  <Button ghost onClick={() => { setModalState(false); }}>
-                    <CloseIcon color={theme.color} />
-                  </Button>
-                </header>
-                <Nav />
-                <ThemeSwitcher onChange={() => toggleTheme()} />
-              </div>
-            </Modal>
+              >
+                <Button ghost onClick={() => { setModalState(false); }}>
+                  <CloseIcon color={theme.color} />
+                </Button>
+              </header>
+              <Nav />
+              <ThemeSwitcher onChange={() => toggleTheme()} />
+            </div>
+          </Modal>
+        </MobileWrapper>
+
+        <Header>
+          <Text variant="title" tag="span">logo</Text>
+          <DesktopWrapper>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Nav />
+              <ThemeSwitcher onChange={() => toggleTheme()} />
+            </div>
+          </DesktopWrapper>
+          <MobileWrapper>
+            <BurgerButton
+              onClick={() => setModalState(!isModalOpen)}
+              color={theme.color}
+            />
           </MobileWrapper>
+        </Header>
 
-          <Header>
-            <Text variant="title" tag="span">logo</Text>
-            <DesktopWrapper>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Nav />
-                <ThemeSwitcher onChange={() => toggleTheme()} />
-              </div>
-            </DesktopWrapper>
-            <MobileWrapper>
-              <BurgerButton
-                onClick={() => setModalState(!isModalOpen)}
-                color={theme.color}
-              />
-            </MobileWrapper>
-          </Header>
-
-          {children}
-          <Footer />
-        </div>
-      )}
+        {children}
+        <Footer />
+      </div>
     </>
   );
 };
