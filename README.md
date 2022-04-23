@@ -1,34 +1,35 @@
-# TypeScript & Styled Components Next.js example
+# Boiler Plate - Typescript
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+Um projeto para servir de base para a criação rápida de websites usando Next.js.
 
-## Preview
+### O projeto apresenta um website responsivo com as seguintes features pré-prontas:
+- Header
+- Nav (com botão hamburger no tamanho mobile)
+- Footer
+- SEO completo
+- Tema escuro (com switcher)
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+<br/>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript-styled-components)
+## Siga os passos abaixo para baixar e instalar o código
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components&project-name=with-typescript-styled-components&repository-name=with-typescript-styled-components)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
+01. Baixe o projeto pelo terminal:
 ```bash
-npx create-next-app --example with-typescript-styled-components with-typescript-styled-components-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-styled-components-app
+git clone https://github.com/SchultzGabriel/boilerplate_context.git
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+02. Instale as dependências com o package manager de sua preferência (certifique-se que se encontra na mesma pasta do package.json)
+```bash
+npm install
+OU
+yarn install
+```
 
-## Notes
+03. Inicie o projeto com o package manager
+```bash
+npm run dev
+OU
+yarn dev
+```
 
-This is an amalgamation of the 2 existing examples:
-
-- [with-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
+04. Acesse http://localhost:3000/ para navegar pelo site.

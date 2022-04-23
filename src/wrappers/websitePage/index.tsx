@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { HamburgerButton } from 'react-hamburger-button';
 import { WebsitePageTypes } from './types';
 
 import { DesktopWrapper, MobileWrapper } from './ScreenWrappers';
@@ -11,6 +10,7 @@ import Nav from '../../components/commons/Nav';
 import Footer from '../../components/commons/Footer';
 import ThemeSwitcher from '../../components/commons/ThemeSwitcher';
 import { CloseIcon } from '../../../public/icons/closeIcon';
+import BurgerButton from '../../components/commons/BurgerButton';
 
 import SEO from '../../SEO';
 
@@ -70,14 +70,9 @@ export default ({
             </div>
           </DesktopWrapper>
           <MobileWrapper>
-            <HamburgerButton
-              open={isModalOpen}
+            <BurgerButton
               onClick={() => setModalState(!isModalOpen)}
-              width={40}
-              height={30}
-              strokeWidth={5}
               color={theme.color}
-              animationDuration={0.2}
             />
           </MobileWrapper>
         </Header>

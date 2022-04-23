@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-// import { TextStyleVariantsMap } from '../../foundations/Text';
 import breakpointMedia from '../../../theme/utils/breakpointMedia';
 import Link from '../Link';
 
@@ -16,15 +15,14 @@ const ButtonDefault = css`
   background-color: ${({ theme }) => theme.secondary};
 `;
 
-// border-radius: ${({ theme }) => theme.borderRadius};
-
 const ButtonWrapper = styled.button<ButtonTypes>`
+  border-radius: ${({ theme }) => theme.borderRadius};
   display:flex;
   align-items: center;
   justify-content: center;
   border: 0;
   cursor: pointer;
-  padding: 12px 26px;
+  /* padding: 12px 26px; */
   font-weight: bold;
   opacity: 1;
   transition: ${({ theme }) => theme.transition};
@@ -33,7 +31,7 @@ const ButtonWrapper = styled.button<ButtonTypes>`
     xs: css`
     `,
     md: css`
-      padding: 12px 43px;
+      /* padding: 12px 43px; */
     `,
   })}
   
@@ -60,7 +58,7 @@ function Button({
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <ButtonWrapper as={tag} href={href} {...props} onClick={onClick}>
+    <ButtonWrapper type="button" as={tag} href={href} {...props} onClick={onClick}>
       {children}
     </ButtonWrapper>
   );

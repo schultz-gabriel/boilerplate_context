@@ -11,14 +11,16 @@ const LinkList = styled.ul`
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 10px;
+gap: 20px;
 width:200px;
-/* background-color: blue; */
+margin: 30px 0;
 
 ${breakpointMedia({
     md: css`
     flex-direction: row;
+    gap: 30px;
     width:auto;
+    margin: 0 30px 0 0
     `,
   })}
 `;
