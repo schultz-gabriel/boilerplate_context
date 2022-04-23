@@ -5,16 +5,16 @@ import seoProps from './types';
 
 export default ({ headTitle, prevImage }: seoProps) => {
   const hasHeadTitle = Boolean(headTitle);
-  const baseTitle = '';
+  const baseTitle = 'Boiler Plate';
   const title = hasHeadTitle
     ? (`${headTitle} | ${baseTitle}`)
     : baseTitle;
 
   const hasPrevImage = Boolean(prevImage);
 
-  const description = '';
+  const description = 'Boiler plate Next.js';
   const image = hasPrevImage ? prevImage : '';
-  const urlBase = '';
+  const urlBase = 'boiler-plate.com';
 
   return (
     <Head>
