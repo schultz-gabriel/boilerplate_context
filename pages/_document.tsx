@@ -1,37 +1,31 @@
-import * as React from 'react';
+import React from 'react';
 import Document, {
-  Html, Head, Main, NextScript, DocumentContext,
+  DocumentContext, Html,
 } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
+    const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
-    // Run the React rendering logic synchronously
-    ctx.renderPage = () => originalRenderPage({
-      // Useful for wrapping the whole react tree
-      enhanceApp: (App) => App,
-      // Useful for wrapping in a per-page basis
-      enhanceComponent: (Component) => Component,
-    });
+    try {
+      ctx.renderPage = () => originalRenderPage({
+        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
+      });
 
-    // Run the parent `getInitialProps`, it now includes the custom `renderPage`
-    const initialProps = await Document.getInitialProps(ctx);
-
-    return initialProps;
-  }
-
-  render() {
-    return (
-      <Html lang="pt-BR">
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <Html lang="pt-BR">
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </Html>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 }
-
-export default MyDocument;

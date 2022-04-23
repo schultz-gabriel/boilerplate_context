@@ -10,6 +10,7 @@
     "lint": "next lint --ignore-path .gitignore ."
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
     "next": "latest",
     "nextjs-progressbar": "^0.0.14",
     "nookies": "^2.5.2",
