@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 
-export interface SeoPropsTypes {
+export interface ISeoProps {
     seoProps: {
         headTitle: string,
         prevImage: string,
     },
 }
 
-export interface WebsitePageTypes extends SeoPropsTypes {
+export interface IWebsitePage extends ISeoProps {
     children: ReactNode,
     toggleTheme: () => void
     theme: {

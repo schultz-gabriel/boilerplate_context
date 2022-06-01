@@ -4,13 +4,13 @@ import { ThemeContext } from 'styled-components';
 
 import { Moon, Sun } from '../../../../public/icons/SwitchIcons';
 
-import { ComponentTypes } from '../../types';
+import { IComponent } from '../../types';
 
-interface SwitcherTypes extends ComponentTypes {
+interface ISwitcher extends IComponent {
     onChange: () => void
 }
 
-export default ({ onChange }:SwitcherTypes) => {
+export default ({ onChange }:ISwitcher) => {
   const theme = useContext(ThemeContext);
 
   return (

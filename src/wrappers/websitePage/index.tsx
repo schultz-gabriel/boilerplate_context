@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { WebsitePageTypes } from './types';
+import { IWebsitePage } from './types';
 
 import { DesktopWrapper, MobileWrapper } from './ScreenWrappers';
 import Text from '../../components/foundations/Text';
@@ -16,7 +16,7 @@ import SEO from '../../SEO';
 
 export default ({
   children, seoProps, toggleTheme, theme,
-}:WebsitePageTypes) => {
+}:IWebsitePage) => {
   const [isModalOpen, setModalState] = useState(false);
   return (
     <>

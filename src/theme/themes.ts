@@ -1,10 +1,10 @@
 import typographyVariants from './typographyVariants';
 
-type breakpointTypes = {
+type IBreakpoints = {
   [key: string]: number
 }
 
-export const breakpoints:breakpointTypes = {
+export const breakpoints:IBreakpoints = {
   xs: 0,
   sm: 480,
   md: 768,

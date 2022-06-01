@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-interface ScreenProps {
+interface IScreen {
     children: ReactNode,
 }
 
-export default ScreenProps;
+export default IScreen;

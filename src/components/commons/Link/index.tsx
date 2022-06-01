@@ -5,12 +5,12 @@ import styled from 'styled-components';
 
 import Text from '../../foundations/Text';
 
-import { ComponentTypes } from '../../types';
+import { IComponent } from '../../types';
 
-interface LinkTypes extends ComponentTypes {
+interface ILink extends IComponent {
     href: string,
     // eslint-disable-next-line react/require-default-props
-    tag?: string
+    tag?: 'title' | 'subTitle' | 'paragraph1' | 'paragraph2' | 'smallestException'
 }
 
 const StyledLink = styled.a`
@@ -26,7 +26,7 @@ const StyledLink = styled.a`
 
 export default function Link({
   href, children, tag, ...props
-}:LinkTypes) {
+}:ILink) {
   const textTag = tag || 'subTitle';
   return (
     <NextLink href={href} passHref>

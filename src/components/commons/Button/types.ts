@@ -1,6 +1,6 @@
-import { ComponentTypes } from '../../types';
+import { IComponent } from '../../types';
 
-export interface ButtonTypes extends ComponentTypes {
+export interface IButton extends IComponent {
     fullWidth?: boolean,
     ghost?: boolean,
     as?: any
