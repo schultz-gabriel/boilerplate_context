@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import breakpointsMedia from '../../../theme/utils/breakpointMedia';
-import { TextTypes } from './types';
+import { IText } from './types';
 
 export const TextStyleVariantsMap:any = {
   title: css`
@@ -43,20 +43,20 @@ export const TextStyleVariantsMap:any = {
   `,
 };
 
-const TextBase = styled.span<TextTypes>`
+const TextBase = styled.span<IText>`
   ${(props) => TextStyleVariantsMap[props.variant]}
   color: ${(props) => (props.color ? props.color : props.theme.color)}
 `;
 
 export default ({
-  tag, variant, children, color, ...props
-}:TextTypes) => (
-  <TextBase
-    as={tag}
-    variant={variant}
-    color={color}
-    {...props}
-  >
+  tag,
+  variant,
+  children,
+  color,
+  align = 'left',
+  ...props
+}: IText) => (
+  <TextBase as={tag} variant={variant} color={color} align={align} {...props}>
     {children}
   </TextBase>
 );

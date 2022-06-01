@@ -1,8 +1,9 @@
-import { ComponentTypes } from '../../types';
+import { IComponent } from '../../types';
 
-export interface TextTypes extends ComponentTypes {
-    variant: string
+export interface IText extends IComponent {
+    variant: 'title' | 'subTitle' | 'paragraph1' | 'paragraph2' | 'smallestException'
     tag?: string
     as?: any
     color?: string
+    align?: 'center' | 'left' | 'right' | 'justify'
 }

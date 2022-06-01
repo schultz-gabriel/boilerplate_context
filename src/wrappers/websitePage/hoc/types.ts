@@ -1,7 +1,7 @@
-import { SeoPropsTypes } from '../types';
+import { ISeoProps } from '../types';
 
 export interface HocProps {
-  pageWrapperProps: SeoPropsTypes,
+  pageWrapperProps: ISeoProps,
   toggleTheme: () => void,
   theme: {}
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 import HeaderWrapper from './Header.styled';
 
-import { ComponentTypes } from '../../types';
+import { IComponent } from '../../types';
 
-export default ({ children }:ComponentTypes) => (
+export default ({ children }:IComponent) => (
   <HeaderWrapper>
     {children}
   </HeaderWrapper>

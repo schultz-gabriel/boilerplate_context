@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css, createGlobalStyle, keyframes } from 'styled-components';
 
-import { ComponentTypes } from '../../types';
+import { IComponent } from '../../types';
 
-interface meucu extends ComponentTypes {
+interface IModal extends IComponent {
     isOpen: boolean
     onClose: () => void
 }
@@ -75,7 +75,7 @@ const LockScroll = createGlobalStyle`
   }
 `;
 
-export default ({ isOpen, onClose, children }: meucu) => (
+export default ({ isOpen, onClose, children }: IModal) => (
   <ModalWrapper
     isOpen={isOpen}
     onClick={(e) => {

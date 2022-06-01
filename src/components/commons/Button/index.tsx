@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import breakpointMedia from '../../../theme/utils/breakpointMedia';
 import Link from '../Link';
 
-import { ButtonTypes } from './types';
+import { IButton } from './types';
 
 const ButtonGhost = css`
   color: ${({ theme }) => theme.color};
@@ -15,7 +15,7 @@ const ButtonDefault = css`
   background-color: ${({ theme }) => theme.secondary};
 `;
 
-const ButtonWrapper = styled.button<ButtonTypes>`
+const ButtonWrapper = styled.button<IButton>`
   border-radius: ${({ theme }) => theme.borderRadius};
   display:flex;
   align-items: center;
@@ -52,7 +52,7 @@ const ButtonWrapper = styled.button<ButtonTypes>`
 
 function Button({
   href, children, onClick, ...props
-}:ButtonTypes) {
+}:IButton) {
   const hasHref = Boolean(href);
   const tag = hasHref ? Link : 'button';
 

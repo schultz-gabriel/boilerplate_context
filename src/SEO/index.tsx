@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 
-import seoProps from './types';
+import ISeo from './types';
 
-export default ({ headTitle, prevImage }: seoProps) => {
+export default ({ headTitle, prevImage }: ISeo) => {
   const hasHeadTitle = Boolean(headTitle);
   const baseTitle = 'Boiler Plate';
   const title = hasHeadTitle

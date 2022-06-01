@@ -1,6 +1,6 @@
-interface seoProps {
+interface ISeo {
     headTitle: string,
     prevImage: string,
 }
 
-export default seoProps;
+export default ISeo;

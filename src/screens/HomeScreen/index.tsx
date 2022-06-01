@@ -21,7 +21,7 @@ const HtmlComponent = styled.div`
 const Home = () => (
   <PageWrapper>
     <HtmlComponent>
-      <Text variant="title" color="#fff">
+      <Text variant="title">
         Boiler Plate
       </Text>
     </HtmlComponent>
